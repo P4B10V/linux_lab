@@ -1,4 +1,4 @@
-Hi! I'm Pablo.
+Hi! This is Pablo.
 
 The idea of create this repository has the objetive of practice Linux while studying English.
 
