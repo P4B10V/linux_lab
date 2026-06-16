@@ -1,11 +1,15 @@
-Hi! I'm Pablo. This project is a Linux lab where I’ll be setting up and configuring a Linux server. I’ve already worked with Windows Server before (AD, DHCP, DNS, OUs, GPOs, etc.), but this time I want to challenge myself with something a bit more complex.
+Hi! I'm Pablo.
 
-I’ll be documenting everything entirely in English — it’s not my first language, but I want to improve my technical vocabulary. So if you notice any mistakes, thanks for your patience :)
+The idea of create this repository has the objetive of practice Linux while studying English.
 
-I started this on 12-06-2026 and this is what i "learned" so far (i use "" because Im not an expert, yet):
+To reach that goal I am going to configure a server on a virtual machine with useful services, documenting my progress in English. Since is not my main language, I am very sure that I might search for technical vocabulary. Also, I'm going to force myself to think always in English while doing it. 
 
-I started this project on 12‑06‑2026, and this is what I’ve learned so far:
+Apogologies in advance if someone reach to this repository and the language is not great, I will try my best.
 
-- **SSH server** — basic hardening (public‑key authentication only, custom port)
-- **nftables** — created a minimal but secure firewall ruleset
-- **isc-dhcp-client** — used it to troubleshoot interface issues with NAT + host‑only adapters
+--- 
+
+I started this lab on **12-06-2026**, and this is what I`ve did so far:
+
+- SSH
+- nftables
+- isc-dhcp-client
