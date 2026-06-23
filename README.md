@@ -2,7 +2,7 @@ Hola, soy Pablo.
 
 Este laboratorio tiene como objetivo aprender sobre Linux y administración de sistemas.
 
-Al principio empecé practicando con servicios aislados como SSH, nftables, VPN, DNS, DHCP... Más adelante evolucioné el proyecto hacia algo más elaborado, utilizando una máquina virtual con OPNsense actuando como firewall y una red interna en la que configuré dos máquinas virtuales: una actuando como controlador de dominio mediante Samba y otra como servidor de ficheros utilizando NFS.
+Al principio empecé practicando con servicios aislados como SSH, nftables, VPN, DNS, DHCP... Más adelante evolucioné el proyecto hacia algo más elaborado, utilizando una máquina virtual con OPNsense actuando como firewall y una red interna en la que configuré dos máquinas virtuales: una actuando como controlador de dominio mediante Samba y otra como servidor de ficheros.
 
 Gracias a esta etapa aprendí conceptos relacionados con la autenticación centralizada mediante SSSD, así como el montaje automático de directorios utilizando PAM y autofs.
 
