@@ -1,18 +1,16 @@
-Hi! This is Pablo.
+Hola, soy Pablo.
 
-The idea of creating this repository has the objective of practicing Linux while studying English.
+Este laboratorio tiene como objetivo aprender sobre Linux y administración de sistemas.
 
-To reach that goal I am going to configure a server on a virtual machine with useful services, documenting my progress in English. Since it's not my main language, I am very sure that I might search for technical vocabulary. Also, I'm going to force myself to always think in English while doing it. 
+Al principio empecé practicando con servicios aislados como SSH, nftables, VPN, DNS, DHCP... Más adelante evolucioné el proyecto hacia algo más elaborado, utilizando una máquina virtual con OPNsense actuando como firewall y una red interna en la que configuré dos máquinas virtuales: una actuando como controlador de dominio mediante Samba y otra como servidor de ficheros utilizando NFS.
 
-Apologies in advance if someone reaches to this repository and the language is not great, I will try my best.
+Gracias a esta etapa aprendí conceptos relacionados con la autenticación centralizada mediante SSSD, así como el montaje automático de directorios utilizando PAM y autofs.
 
---- 
+Después de experimentar con Ansible, decidí orientar el laboratorio hacia un escenario más realista: la infraestructura de un instituto.
 
-I started this lab on **11-06-2026**. At first, I focused on learning services separately, such as SSH and nftables, and then decided to create a more sophisticated environment.
+La base de la infraestructura seguirá siendo similar a la que ya tenía. Todo comenzará con un firewall OPNsense y, detrás de él, una red interna que representará la red del centro educativo. De momento dejaré de lado la segmentación de red para centrarme en la propia infraestructura.
 
-First, we have an OPNsense firewall/router that provides access to our LAN, where there are currently two virtual machines: one acting as a Domain Controller with Samba and the other as an NFS file server.
+Dentro de la red interna utilizaré un controlador de dominio basado en Samba y un servidor dedicado exclusivamente al almacenamiento de ficheros. Una vez desplegada la infraestructura y configurados los permisos mediante ACL, el siguiente objetivo será automatizar tareas habituales mediante Ansible, como la creación de alumnos, los cambios de curso o la gestión de recursos del centro.
 
--> Under construction
-
-
+El objetivo principal no es únicamente aprender a configurar servicios, sino también comprender cómo diseñar, documentar y automatizar una infraestructura completa utilizando herramientas habituales en entornos Linux.
 
