@@ -81,7 +81,7 @@ Este paso según la documentación de Samba es muy importante, debido a que Kerb
 
 Ahora que tenemos un active directory mínimo y funcional, empezaremos a diseñar la infraestructura basada en unidades organizativas:
 
-<center><img width="711" height="601" alt="Diagrama sin título drawio(5)" src="https://github.com/user-attachments/assets/cd4d3cc8-270a-4838-9c94-96f1a4625d1d" /></center>center
+<center><img width="711" height="601" alt="Diagrama sin título drawio(5)" src="https://github.com/user-attachments/assets/cd4d3cc8-270a-4838-9c94-96f1a4625d1d" /></center>
 
 
 
