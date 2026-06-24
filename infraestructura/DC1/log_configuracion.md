@@ -156,8 +156,7 @@ samba-tool group addmembers GRP_ALUMNOS GRP_2DAM_PROFESORES
 
 ```
 
-
-
+De momento aquí finaliza el DC, no voy a configurar nada mas, a partir de aqui voy a crear el servidor de ficheros. Cuando haga mas modificaciones editaré este documento.
 
 
 
