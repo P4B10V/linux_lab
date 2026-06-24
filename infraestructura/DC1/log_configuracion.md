@@ -22,5 +22,49 @@ Esta explicación es una simplificación y la iré corrigiendo a medida que prof
 
 ---
 
+Estaré utilizando las recomendaciones escritas [aqui](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller)
+
+Lo primero será escribir en `etc/hosts` y `/etc/hostname`: dc1.ad.pvazquez.net, este será el hostname de mi controlador de dominio. Como de momento no tengo configurado ningún DNS dejaré como resolver el firewall para descargar los paquetes necesarios. En `etc/network/interfaces` pondré una IP estática para mi servidor. 
+
+
+Empezamos instalando: `apt install samba-ad-dc`
+
+Después tendremos que realizar un **provision**, que es como la instalación del rol AD en Windows Server, al hacer `samba-tool domain provision` te pide lo siguiente:
+
+- Realm: AD.PVAZQUEZ.NET
+- Domain: AD
+- Server Role: dc
+- DNS backend: SAMBA_INTERNAL
+- DNS forwarder IP address: 10.0.0.1
+
+NOTE: Fue necesario borrar `/etc/samba/smb.conf` para realizar el provision correctamente.
+
+Ahora que tenemos configurado OPNsense como nuestro forwarder, es hora de cambiar `/etc/resolv.conf`:
+```
+search ad.pvazquez.net
+nameserver 10.0.0.10
+``` 
+
+Copiamos /var/lib/samba/private/krb5.conf en /etc/krb5.conf 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
