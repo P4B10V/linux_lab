@@ -86,13 +86,75 @@ Ahora que tenemos un active directory mínimo y funcional, empezaremos a diseña
 
 De momento así es suficiente.
 
+Lo bueno sería montar un script que replicara la misma estructura de UO para si hay que volver a hacer todo, o simplemente añadir cosas a mayores, es decir, tener un control de lo que se hizo.
 
 
+```
+samba-tool create ou add ou=IESLinux
 
+samba-tool create ou add ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+    samba-tool create ou add ou=Clases,ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=1ASIR,ou=Clases,ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=2ASIR,ou=Clases,ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=1DAW,ou=Clases,ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=2DAW,ou=Clases,ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=1DAM,ou=Clases,ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=2DAM,ou=Clases,ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
 
+  samba-tool create ou add ou=Servidores,ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+  samba-tool create ou add ou=Impresoras,ou=Equipos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
 
+samba-tool create ou add ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+    samba-tool create ou add ou=Alumnos,ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=1ASIR,ou=Alumnos,ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=2ASIR,ou=Alumnos,ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=1DAW,ou=Alumnos,ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=2DAW,ou=Alumnos,ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=1DAM,ou=Alumnos,ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+        samba-tool create ou add ou=2DAM,ou=Alumnos,ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+    samba-tool create ou add ou=Profesores,ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+    samba-tool create ou add ou=Administradores,ou=Usuarios,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
 
+samba-tool create ou add ou=Grupos,OU=IESLinux,DC=ad,DC=pvazquez,DC=net
+```
 
+Y ahora definir los grupos:
+
+```
+samba-tool group add GRP_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
+
+samba-tool group add GRP_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
+
+samba-tool group add GRP_ADMINISTRADORES --groupou="OU=Grupos,OU=IESLinux"
+
+samba-tool group add GRP_1ASIR_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1ASIR_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2ASIR_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2ASIR_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1DAW_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1DAW_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2DAW_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2DAW_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1DAM_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1DAM_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2DAM_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2DAM_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
+
+samba-tool group addmembers GRP_ALUMNOS GRP_1ASIR_ALUMNOS
+samba-tool group addmembers GRP_ALUMNOS GRP_2ASIR_ALUMNOS
+samba-tool group addmembers GRP_ALUMNOS GRP_1DAW_ALUMNOS
+samba-tool group addmembers GRP_ALUMNOS GRP_2DAW_ALUMNOS
+samba-tool group addmembers GRP_ALUMNOS GRP_1DAM_ALUMNOS
+samba-tool group addmembers GRP_ALUMNOS GRP_2DAM_ALUMNOS
+
+samba-tool group addmembers GRP_ALUMNOS GRP_1ASIR_PROFESORES
+samba-tool group addmembers GRP_ALUMNOS GRP_2ASIR_PROFESORES
+samba-tool group addmembers GRP_ALUMNOS GRP_1DAW_PROFESORES
+samba-tool group addmembers GRP_ALUMNOS GRP_2DAW_PROFESORES
+samba-tool group addmembers GRP_ALUMNOS GRP_1DAM_PROFESORES
+samba-tool group addmembers GRP_ALUMNOS GRP_2DAM_PROFESORES
+
+```
 
 
 
