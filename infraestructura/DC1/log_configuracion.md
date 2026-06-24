@@ -47,11 +47,27 @@ nameserver 10.0.0.10
 
 Copiamos /var/lib/samba/private/krb5.conf en /etc/krb5.conf 
 
+Zona inversa:
+samba-tool dns zonecreate ad.pvazquez.net 0.0.10.in-addr.arpa -U Administrator
+
+samba-tool dns add ad.pvazquez.net 0.0.10.in-addr.arpa 10 PTR dc1.ad.pvazquez.net -U Administrator 
 
 
+--- 
 
+Verificar DNS:
 
+- host -t SRV _ldap._tcp.ad.pvazquez.net.
+- host -t SRV _kerberos._udp.ad.pvazquez.net.
+- host -t A dc1.ad.pvazquez.net.
+- host -t PTR 10.0.0.10
 
+--- 
+
+Verificar kerberos (hace falta `krb5-user`)
+
+kinit Administrator
+klist
 
 
 
