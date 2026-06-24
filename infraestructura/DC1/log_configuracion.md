@@ -66,11 +66,22 @@ Verificar DNS:
 
 Verificar kerberos (hace falta `krb5-user`)
 
-kinit Administrator
-klist
+- kinit Administrator
+- klist
 
 
+--- 
 
+El último paso sería configurar nuestro controlador de dominio como servidor NTP. Para ello instalaremos `chrony` y añadiremos en `/etc/chrony/chrony.conf` allow 10.0.0.0/24 para permitir las consultas desde nuestra lan. Acordarse de reiniciar el servicio. 
+
+Este paso según la documentación de Samba es muy importante, debido a que Kerberos necesita que las una sincronización en servidor/clientes. De momento lo dejaremos así pues no disponemos de clientes.
+
+
+---
+
+Ahora que tenemos un active directory mínimo y funcional, empezaremos a diseñar la infraestructura basada en unidades organizativas:
+
+<img width="711" height="601" alt="Diagrama sin título drawio(5)" src="https://github.com/user-attachments/assets/cd4d3cc8-270a-4838-9c94-96f1a4625d1d" />
 
 
 
