@@ -6,7 +6,7 @@ Como estoy siguiento la [documentación](https://wiki.samba.org/index.php/Settin
 
 
 <p align="center">
- ## Verificando kerberos
+ ##Verificando kerberos
   <img src="https://github.com/user-attachments/assets/5b3c69f9-6393-4df0-862b-fb8c1f75674f" width="600">
 </p>
 
