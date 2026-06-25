@@ -17,3 +17,27 @@ Como estoy siguiento la [documentación](https://wiki.samba.org/index.php/Settin
 <p align="center"><em>Verificando Chrony</em></p>
 
 
+apt install samba-common-bin winbind libnss-winbind libpam-winbind smbclient krb5-user acl -y
+
+```
+[global]
+   workgroup = AD
+   security = ads
+   realm = AD.PVAZQUEZ.NET
+   idmap config * : backend = tdb
+   idmap config * : range = 3000-7999
+   idmap config AD : backend = rfc2307
+   idmap config AD : range = 10000-999999
+   idmap config AD : ldap_server = ad
+   winbind use default domain = yes
+   winbind nss info = rfc2307
+   template shell = /bin/bash
+```
+
+
+net ads join -U Administrator
+
+
+
+
+
