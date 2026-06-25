@@ -4,19 +4,16 @@ Tras realizar comprobaciones con `nslookup` y que podemos realizar queries a nue
 
 Como estoy siguiento la [documentación](https://wiki.samba.org/index.php/Setting_up_Samba_as_a_Domain_Member) de Samba, empezaré preparando el servidor según el orden que me recomiendan, por lo que primero instalare `krb5-user` y configuraré `chrony`.
 
-<p align="center">
- **Verificando kerberos**
-</p>
-<p align="center">
- ##Verificando kerberos
-  <img src="https://github.com/user-attachments/assets/5b3c69f9-6393-4df0-862b-fb8c1f75674f" width="600">
-</p>
+
 
 <p align="center">
- **Verificando chrony**
+  <img src="https://github.com/user-attachments/assets/5b3c69f9-6393-4df0-862b-fb8c1f75674f" width="600">
 </p>
+<p align="center"><em>Verificando Kerberos</em></p>
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8e33d88f-d576-4af7-a9f6-4614d402c4e4" width="600">
 </p>
+<p align="center"><em>Verificando Chrony</em></p>
 
 
