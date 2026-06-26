@@ -98,7 +98,7 @@ Ahora que ya tengo el espacio para mis carpetas, tendré que crearlas y comparti
 
 Como ya tenemos grupos creados en Samba, tendrémos que usar acl para proporcionar accesos. 
 
-
+h
 
 
 
