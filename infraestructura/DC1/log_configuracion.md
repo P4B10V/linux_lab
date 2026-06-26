@@ -1,6 +1,6 @@
 Esta es la primera máquina virtual en configurar. Aquí escribiré todo lo relacionado con la configuración de este servidor. 
 
-El servidor lo haré en un Debian 13 CLI. 
+El servidor lo haré en un Debian 12 CLI (La primera vez lo intenté con Debian 13 pero me dió muchisimos problemas)
 
 Aquí voy a definir el dominio, para este laboratorio usaré: `pvazquez.net`, como es un dominio que tengo comprado pues lo utilizaré por si en un futuro alguna funcion que ahora mismo desconozco lo necesite.
 
@@ -21,9 +21,23 @@ Estaré utilizando las recomendaciones escritas [aqui](https://wiki.samba.org/in
 Lo primero será escribir en `etc/hosts` y `/etc/hostname`: dc1.ad.pvazquez.net, este será el hostname de mi controlador de dominio. Como de momento no tengo configurado ningún DNS dejaré como resolver el firewall para descargar los paquetes necesarios. En `etc/network/interfaces` pondré una IP estática para mi servidor. 
 
 
-Empezamos instalando: `apt install samba-ad-dc`
+Empezamos instalando: `apt install samba krb5-config winbind smbclient samba-dsdb-modules samba-vfs-modules acl attr -y`
 
-Después tendremos que realizar un **provision**, que es como la instalación del rol AD en Windows Server, al hacer `samba-tool domain provision` te pide lo siguiente:
+Editar `/etc/hosts`:
+```
+127.0.0.1   localhost
+10.0.0.10   dc1.ad.pvazquez.net dc1
+```
+
+Acordarse de esto, me dio muchísimos problemas:
+```
+systemctl stop smbd nmbd winbind
+systemctl disable smbd nmbd winbind
+systemctl mask smbd nmbd winbind
+```
+
+
+Después tendremos que realizar un **provision**, que es como la instalación del rol AD en Windows Server, al hacer `samba-tool domain provision --use-rfc2307 --interactive` te pide lo siguiente (*rm /etc/samba/smb.conf antes del provision*):
 
 - Realm: AD.PVAZQUEZ.NET
 - Domain: AD
