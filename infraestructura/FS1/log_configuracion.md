@@ -60,6 +60,6 @@ Crear una partición primaria en cada uno con `fsdisk` configurando tipo de part
   <img width="428" height="150" alt="imagen" src="https://github.com/user-attachments/assets/8bdb1486-9274-4ebd-af9c-294a71a12d8b" />
 </p>
 
-
+Ahora que ya tengo el espacio para mis carpetas, tendré que crearlas y compartirlas.
 
 
