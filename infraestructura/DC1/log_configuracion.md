@@ -167,4 +167,12 @@ samba-tool group addmembers GRP_PROFESORES GRP_2DAM_PROFESORES
 De momento aquí finaliza el DC, no voy a configurar nada mas, a partir de aqui voy a crear el servidor de ficheros. Cuando haga mas modificaciones editaré este documento.
 
 
+# Problemas encontrados
+
+1. El controlador de dominio empezó siendo un Debian 13 pero me encontré con muchos problemas al intentar unir el servidor de ficheros al dominio, el fallo estaba relacionado con las credenciales que daba un error RPC. Bajé a Debian 12 y antes de realizar el provision, paré los servicios smbd, nmbd y winbind. Tras realizar eso pude unir correctamente el servidor de ficheros al dominio. Aún tengo que hacer la prueba con Debian 13, pero lo mas seguro es que smb, nmd y winbind tengo que desactivarlos en mi controlador de dominio porque hace que no funcione como es debido.
+
+
+
+
+
 
