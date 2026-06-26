@@ -42,6 +42,24 @@ net ads join -U Administrator
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1d8c4d39-afad-45bf-99a6-e4f01f4b7e23" width="772" height="37" >
 </p>
-<p align="center"><em>Comprobando unión al dominio</em></p>
+
+--- 
+
+Ahora es momento de preparar nuestro sistema de almacenamiento antes de compartir nada. Creé dos discos duros virtuales a mayores en FS1 y ahora lo que haré será configurar un RAID1 + LVM.
+
+Primero compruebo que los discos existan con `lsblk`. Tengo para utilizar **/dev/sdb** **/dev/sdc**
+
+Crear una partición primaria en cada uno con `fsdisk` configurando tipo de particion como **Linux raid auto**
+
+- mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1
+- pvcreate /dev/md0
+- vgcreate vg_data /dev/md0
+- lvcreate -l 100%FREE --name lv_data vg_data
+
+<p align="center">
+  <img width="428" height="150" alt="imagen" src="https://github.com/user-attachments/assets/8bdb1486-9274-4ebd-af9c-294a71a12d8b" />
+</p>
+
+
 
 
