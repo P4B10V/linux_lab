@@ -19,6 +19,7 @@ Como estoy siguiento la [documentación](https://wiki.samba.org/index.php/Settin
 
 apt install samba-common-bin winbind libnss-winbind libpam-winbind smbclient krb5-user acl -y
 
+
 ```
 [global]
    workgroup = AD
@@ -38,6 +39,9 @@ apt install samba-common-bin winbind libnss-winbind libpam-winbind smbclient krb
 net ads join -U Administrator
 
 
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1d8c4d39-afad-45bf-99a6-e4f01f4b7e23" width="772" height="37" >
+</p>
+<p align="center"><em>Comprobando unión al dominio</em></p>
 
 
