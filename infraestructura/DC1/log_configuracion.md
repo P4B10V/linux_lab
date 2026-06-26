@@ -137,8 +137,18 @@ samba-tool group add GRP_ADMINISTRADORES --groupou="OU=Grupos,OU=IESLinux"
 
 samba-tool group add GRP_1ASIR_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
 samba-tool group add GRP_1ASIR_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1ASIR_ISO --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1ASIR_PAR --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1ASIR_XBD --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1ASIR_LM --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_1ASIR_FDH --groupou="OU=Grupos,OU=IESLinux"
 samba-tool group add GRP_2ASIR_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
 samba-tool group add GRP_2ASIR_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2ASIR_ASO --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2ASIR_SRI --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2ASIR_SAD --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2ASIR_ABD --groupou="OU=Grupos,OU=IESLinux"
+samba-tool group add GRP_2ASIR_IAW --groupou="OU=Grupos,OU=IESLinux"
 samba-tool group add GRP_1DAW_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
 samba-tool group add GRP_1DAW_PROFESORES --groupou="OU=Grupos,OU=IESLinux"
 samba-tool group add GRP_2DAW_ALUMNOS --groupou="OU=Grupos,OU=IESLinux"
@@ -161,6 +171,18 @@ samba-tool group addmembers GRP_PROFESORES GRP_1DAW_PROFESORES
 samba-tool group addmembers GRP_PROFESORES GRP_2DAW_PROFESORES
 samba-tool group addmembers GRP_PROFESORES GRP_1DAM_PROFESORES
 samba-tool group addmembers GRP_PROFESORES GRP_2DAM_PROFESORES
+
+samba-tool group addmembers GRP_1ASIR_PROFESORES GRP_1ASIR_ISO
+samba-tool group addmembers GRP_1ASIR_PROFESORES GRP_1ASIR_PAR
+samba-tool group addmembers GRP_1ASIR_PROFESORES GRP_1ASIR_XBD
+samba-tool group addmembers GRP_1ASIR_PROFESORES GRP_1ASIR_LM
+samba-tool group addmembers GRP_1ASIR_PROFESORES GRP_1ASIR_FDH
+
+samba-tool group addmembers GRP_2ASIR_PROFESORES GRP_2ASIR_ASO
+samba-tool group addmembers GRP_2ASIR_PROFESORES GRP_2ASIR_SRI
+samba-tool group addmembers GRP_2ASIR_PROFESORES GRP_2ASIR_SAD
+samba-tool group addmembers GRP_2ASIR_PROFESORES GRP_2ASIR_ABD
+samba-tool group addmembers GRP_2ASIR_PROFESORES GRP_2ASIR_IAW
 
 ```
 
