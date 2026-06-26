@@ -60,6 +60,48 @@ Crear una partición primaria en cada uno con `fsdisk` configurando tipo de part
   <img width="428" height="150" alt="imagen" src="https://github.com/user-attachments/assets/8bdb1486-9274-4ebd-af9c-294a71a12d8b" />
 </p>
 
-Ahora que ya tengo el espacio para mis carpetas, tendré que crearlas y compartirlas.
+Ahora que ya tengo el espacio para mis carpetas, tendré que crearlas y compartirlas. Voy a definir la siguiente estructura:
+```
+.
+├── antiguos
+├── cursos
+│   ├── 1asir
+│   │   ├── FDH
+│   │   ├── ISO
+│   │   ├── LM
+│   │   ├── PAR
+│   │   └── XBD
+│   ├── 1dam
+│   ├── 1daw
+│   ├── 2asir
+│   │   ├── ABD
+│   │   ├── ASO
+│   │   ├── IAW
+│   │   ├── SAD
+│   │   └── SRI
+│   ├── 2dam
+│   └── 2daw
+└── usuarios
+    ├── alumnos
+    │   ├── 1asir
+    │   ├── 1dam
+    │   ├── 1daw
+    │   ├── 2asir
+    │   ├── 2dam
+    │   └── 2daw
+    └── profesores
+```
+
+- /mnt/datos/usuarios para las carpetas personales de alumnos/profesores
+- /mnt/datos/cursos para información relacionada con cada curso y sus asignaturas
+- /mnt/datos/antiguos para alumnos que se dan de baja o terminaron estudios
+
+Como ya tenemos grupos creados en Samba, tendrémos que usar acl para proporcionar accesos. 
+
+
+
+
+
+
 
 
