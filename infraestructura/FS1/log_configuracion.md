@@ -98,9 +98,15 @@ Ahora que ya tengo el espacio para mis carpetas, tendré que crearlas y comparti
 
 Como ya tenemos grupos creados en Samba, tendrémos que usar acl para proporcionar accesos. 
 
-h
+--- 
 
+modificar para usar sssd 
 
+apt install sssd sssd-tools sssd-ad sssd-krb5 krb5-user realmd adcli nfs-kernel-server libnfsidmap1 acl packagekit -y
+
+realm join -U Administrator AD.PVAZQUEZ.NET
+
+realm list 
 
 
 
